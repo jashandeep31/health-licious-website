@@ -13,20 +13,39 @@
     />
     <body>
         <nav>
-            <div class="logo">
-                <h1><span>Health</span> Licious</h1>
+            <div id="main-nav">
+                <div class="logo">
+                    <h1><span>Health</span> Licious</h1>
+                </div>
+                <ul class="links">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="menu-button">
+                    <li>
+                        <a href="#"><i class="bx bx-search"></i></a>
+                    </li>
+                    <li><a href="#" class="button">Sign in</a></li>
+                </ul>
+                <button id="menu-toggle-button">
+                    <i class="bx bx-menu-alt-right"></i>
+                </button>
             </div>
-            <ul class="links">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <ul class="menu-button">
-                <li>
-                    <a href="#"><i class="bx bx-search"></i></a>
-                </li>
-                <li><a href="#" class="button">Sign in</a></li>
-            </ul>
+            <div id="mobile-links" class="mobile-links active">
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </nav>
         <section id="main">
             <div class="details">
@@ -50,5 +69,20 @@
                 <img src="./images/main.png" alt="" />
             </div>
         </section>
+        <script>
+            const button = document.getElementById("menu-toggle-button");
+            const mobileLinks = document.getElementById("mobile-links");
+            let menuState = false;
+
+            button.addEventListener("click", () => {
+                mobileLinks.classList.toggle("menu-active");
+                menuState = !menuState;
+                if (menuState == false) {
+                    button.innerHTML = '<i class="bx bx-menu-alt-left"></i>';
+                } else {
+                    button.innerHTML = '<i class="bx bx-x"></i>';
+                }
+            });
+        </script>
     </body>
 </html>
